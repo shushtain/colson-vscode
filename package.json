@@ -1,0 +1,68 @@
+{
+  "name": "colson",
+  "displayName": "ColSON",
+  "description": "ColSON language support.",
+  "publisher": "shushtain",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "icon": "icon.png",
+  "categories": [
+    "Programming Languages"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shushtain/colson-vscode.git"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "colson",
+        "aliases": [
+          "ColSON",
+          "colson"
+        ],
+        "extensions": [
+          ".colson"
+        ],
+        "firstLine": "^\\s*(::\\s*(ColSON|colson)?|:::)\\s*$",
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "colson",
+        "scopeName": "source.colson",
+        "path": "./syntaxes/colson.tmLanguage.json"
+      },
+      {
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "scopeName": "source.colson",
+        "path": "./syntaxes/colson.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.colson": "colson"
+        }
+      }
+    ],
+    "markdown": {
+      "codeLanguages": [
+        {
+          "language": "colson",
+          "aliases": [
+            "ColSON",
+            "colson"
+          ]
+        }
+      ]
+    },
+    "snippets": [
+      {
+        "language": "colson",
+        "path": "./snippets/colson.json"
+      }
+    ]
+  }
+}

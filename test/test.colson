@@ -1,0 +1,83 @@
+:: comment
+:: :comment
+::comment
+:::s
+::a
+
+:::
+
+::
+
+
+key :::
+key: :::
+: :::
+::::
+key: :::
+key::::
+
+key ::
+key: ::
+: ::
+:::
+key: ::
+key:::
+
+key :: \value sdajs\
+key :: :True
+key :::True
+key :: :24
+key :: :-24.2
+key :: :-.2
+key :: :-.2e-2
+key :: \:-.2e-2\
+key :: :snippet
+key :: sw
+key::value
+ke::y:: \:: value\
+key: ::value
+key:::value
+
+
+key :: string
+key :: :True
+key :: :23.45e-4
+key :: :None
+
+
+:True
+:-2
+:snippet
+:
+
+:: * BLOCK
+key :::
+    key :: value
+    key :: value
+    key :: value
+
+    key :: value
+:: .
+
+:::
+    meta :::
+        language :: en
+        title :: \\
+
+:: comment for the kids
+
+    body ::
+        :::
+            type :: h1
+            content :: \Double space:  \
+        :::
+            type :: ul
+            content ::
+                first
+                :123.05
+                :True
+                \:False\
+
+    footer :::
+        path :: /
+        script :: script.js

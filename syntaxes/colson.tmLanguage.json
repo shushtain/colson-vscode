@@ -1,0 +1,145 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ColSON",
+  "scopeName": "source.colson",
+  "fileTypes": ["colson"],
+  "patterns": [
+    {
+      "match": "^\\s*(::)\\s*([^:\\s].*|(?<=\\s)\\S.*)\\s*$",
+      "comment": "Comment",
+      "name": "comment.line.colson",
+      "captures": {
+        "1": { "name": "comment.line.character.colson" },
+        "2": { "name": "comment.line.string.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(:::)\\s*$",
+      "comment": "Dictionary",
+      "captures": {
+        "1": { "name": "keyword.operator.dict.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(::)\\s*$",
+      "comment": "List",
+      "captures": {
+        "1": { "name": "keyword.operator.list.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(\\\\)(.*)(\\\\)\\s*$",
+      "comment": "Escaped String",
+      "name": "string.escape.colson",
+      "captures": {
+        "1": { "name": "constant.character.escape.colson" },
+        "2": { "name": "string.colson" },
+        "3": { "name": "constant.character.escape.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(:::)\\s*$",
+      "comment": "Key : Dictionary",
+      "name": "variable.other.key.dict.colson",
+      "captures": {
+        "1": { "name": "variable.other.key.colson" },
+        "2": { "name": "keyword.operator.dict.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s*$",
+      "comment": "Key : List",
+      "name": "variable.other.key.list.colson",
+      "captures": {
+        "1": { "name": "variable.other.key.colson" },
+        "2": { "name": "keyword.operator.list.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s*(\\\\)(.*)(\\\\)\\s*$",
+      "comment": "Key : Escaped String",
+      "name": "variable.other.key.value.colson",
+      "captures": {
+        "1": { "name": "variable.other.key.colson" },
+        "2": { "name": "keyword.operator.value.colson" },
+        "3": { "name": "constant.character.escape.colson" },
+        "4": { "name": "string.colson" },
+        "5": { "name": "constant.character.escape.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s+(:)(True|False|None)\\s*$",
+      "comment": "Key : True|False|None",
+      "name": "variable.other.key.value.colson",
+      "captures": {
+        "1": { "name": "variable.other.key.colson" },
+        "2": { "name": "keyword.operator.value.colson" },
+        "3": { "name": "constant.character.colson" },
+        "4": { "name": "constant.language.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s+(:(?=\\S))([+-]?(?:\\d*\\.\\d+|\\d+\\.?)(?:[eE][+-]?\\d+)?)\\s*$",
+      "comment": "Key : Number",
+      "name": "variable.other.key.value.colson",
+      "captures": {
+        "1": { "name": "variable.other.key.colson" },
+        "2": { "name": "keyword.operator.value.colson" },
+        "3": { "name": "constant.character.colson" },
+        "4": { "name": "constant.numeric.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s+(:[^:\\s]\\S*)\\s*$",
+      "comment": "Key : Snippet",
+      "captures": {
+        "1": { "name": "variable.other.key.colson" },
+        "2": { "name": "keyword.operator.value.colson" },
+        "3": { "name": "markup.snippet.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s*([^:\\s].*|(?<=\\s)\\S.*)\\s*$",
+      "comment": "Key : String",
+      "name": "variable.other.key.value.colson",
+      "captures": {
+        "1": { "name": "variable.other.key.colson" },
+        "2": { "name": "keyword.operator.value.colson" },
+        "3": { "name": "string.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(:)(True|False|None)\\s*$",
+      "comment": "True|False|None",
+      "name": "constant.other.special.colson",
+      "captures": {
+        "1": { "name": "constant.character.colson" },
+        "2": { "name": "constant.language.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(:(?=\\S))([+-]?(?:\\d*\\.\\d+|\\d+\\.?)(?:[eE][+-]?\\d+)?)\\s*$",
+      "comment": "Number",
+      "name": "constant.other.numeric.colson",
+      "captures": {
+        "1": { "name": "constant.character.colson" },
+        "2": { "name": "constant.numeric.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(:[^:\\s]\\S*)\\s*$",
+      "comment": "Snippet",
+      "captures": {
+        "1": { "name": "markup.snippet.colson" }
+      }
+    },
+    {
+      "match": "^\\s*(\\S.*)\\s*$",
+      "comment": "String",
+      "captures": {
+        "1": { "name": "string.colson" }
+      }
+    }
+  ],
+  "uuid": "254577de-ef9b-4ce5-9370-15ffeafb438d"
+}
