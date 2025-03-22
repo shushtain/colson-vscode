@@ -1,18 +1,1 @@
-{
-  "None": {
-    "prefix": [":none", ":null"],
-    "body": [":None"]
-  },
-  "True": {
-    "prefix": [":true"],
-    "body": [":True"]
-  },
-  "False": {
-    "prefix": [":false"],
-    "body": [":False"]
-  },
-  "Empty String": {
-    "prefix": [":empty"],
-    "body": ["\\\\$0\\\\"]
-  }
-}
+{}
