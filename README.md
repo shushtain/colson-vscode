@@ -6,22 +6,24 @@ This extension provides syntax highlighting for ColSON, a minimalist language th
 
 | ColSON         | JSON             |
 | -------------- | ---------------- |
-| `::`           | `[]`             |
-| `:::`          | `{}`             |
-| `:True`        | `true`           |
-| `:False`       | `false`          |
-| `:None`        | `null`           |
-| `:123.5e-2`    | `123.5e-2`       |
+| `::`           | `[`              |
+| `:::`          | `{`              |
+| `True`         | `true`           |
+| `False`        | `false`          |
+| `None`         | `null`           |
+| `123.5e-2`     | `123.5e-2`       |
 | `key :: value` | `"key": "value"` |
 | `key :::`      | `"key": {}`      |
 | `key ::`       | `"key": []`      |
 | `:: comment`   | _skipped_        |
 | `\\`           | `""`             |
-| `\:False\`     | `":False"`       |
-| `:snippet`     | _not applicable_ |
+| `\False\`      | `"False"`        |
+| `~snippet`     | `"~snippet"`     |
 
 - Consistent indentation is important.
 - Empty lines are optional.
+- Snippets start with `~` and may contain only letters, numbers, `-` and `_`.
+- Snippets are treated as strings but allow you to see suggestions.
 
 ## Example
 
@@ -44,7 +46,7 @@ This extension provides syntax highlighting for ColSON, a minimalist language th
     },
     {
       "type": "ul",
-      "content": ["first", 123.05, true, ":False"]
+      "content": ["first", "~my_snippet", 123.05, true, "False"]
     }
   ],
   "footer": {

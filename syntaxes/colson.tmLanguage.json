@@ -68,29 +68,27 @@
       }
     },
     {
-      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s+(:)(True|False|None)\\s*$",
+      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s*(True|False|None)\\s*$",
       "comment": "Key : True|False|None",
       "name": "variable.other.key.value.colson",
       "captures": {
         "1": { "name": "variable.other.key.colson" },
         "2": { "name": "keyword.operator.value.colson" },
-        "3": { "name": "constant.character.colson" },
-        "4": { "name": "constant.language.colson" }
+        "3": { "name": "constant.language.colson" }
       }
     },
     {
-      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s+(:(?=\\S))([+-]?(?:\\d*\\.\\d+|\\d+\\.?)(?:[eE][+-]?\\d+)?)\\s*$",
+      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s*([+-]?(?:\\d*\\.\\d+|\\d+\\.?)(?:[eE][+-]?\\d+)?)\\s*$",
       "comment": "Key : Number",
       "name": "variable.other.key.value.colson",
       "captures": {
         "1": { "name": "variable.other.key.colson" },
         "2": { "name": "keyword.operator.value.colson" },
-        "3": { "name": "constant.character.colson" },
-        "4": { "name": "constant.numeric.colson" }
+        "3": { "name": "constant.numeric.colson" }
       }
     },
     {
-      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s+(:[^:\\s]\\S*)\\s*$",
+      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s*(~[\\w-]*)\\s*$",
       "comment": "Key : Snippet",
       "captures": {
         "1": { "name": "variable.other.key.colson" },
@@ -99,7 +97,7 @@
       }
     },
     {
-      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s*([^:\\s].*|(?<=\\s)\\S.*)\\s*$",
+      "match": "^\\s*(.*\\S(?=\\s)|.*[^:\\s])\\s*(::)\\s*((?:[^:\\s].*\\S|[^:\\s])|(?<=\\s)(?:\\S.*\\S|\\S))\\s*$",
       "comment": "Key : String",
       "name": "variable.other.key.value.colson",
       "captures": {
@@ -109,32 +107,30 @@
       }
     },
     {
-      "match": "^\\s*(:)(True|False|None)\\s*$",
+      "match": "^\\s*(True|False|None)\\s*$",
       "comment": "True|False|None",
       "name": "constant.other.special.colson",
       "captures": {
-        "1": { "name": "constant.character.colson" },
-        "2": { "name": "constant.language.colson" }
+        "1": { "name": "constant.language.colson" }
       }
     },
     {
-      "match": "^\\s*(:(?=\\S))([+-]?(?:\\d*\\.\\d+|\\d+\\.?)(?:[eE][+-]?\\d+)?)\\s*$",
+      "match": "^\\s*([+-]?(?:\\d*\\.\\d+|\\d+\\.?)(?:[eE][+-]?\\d+)?)\\s*$",
       "comment": "Number",
       "name": "constant.other.numeric.colson",
       "captures": {
-        "1": { "name": "constant.character.colson" },
-        "2": { "name": "constant.numeric.colson" }
+        "1": { "name": "constant.numeric.colson" }
       }
     },
     {
-      "match": "^\\s*(:[^:\\s]\\S*)\\s*$",
+      "match": "^\\s*(~[\\w-]*)\\s*$",
       "comment": "Snippet",
       "captures": {
         "1": { "name": "markup.snippet.colson" }
       }
     },
     {
-      "match": "^\\s*(\\S.*)\\s*$",
+      "match": "^\\s*(\\S.*\\S|\\S)\\s*$",
       "comment": "String",
       "captures": {
         "1": { "name": "string.colson" }

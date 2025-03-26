@@ -1,1 +1,22 @@
-{}
+{
+  "True": {
+    "prefix": "~true",
+    "body": "True",
+    "description": "Boolean True"
+  },
+  "False": {
+    "prefix": "~false",
+    "body": "False",
+    "description": "Boolean False"
+  },
+  "None": {
+    "prefix": ["~none", "~null"],
+    "body": "None",
+    "description": "JSON's null"
+  },
+  "Empty String": {
+    "prefix": ["~empty"],
+    "body": "\\\\\\\\",
+    "description": "Empty string"
+  }
+}
