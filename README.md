@@ -1,6 +1,6 @@
 # ColSON
 
-This extension provides syntax highlighting for ColSON, a minimalist language that can be converted into JSON.
+This extension provides syntax highlighting for ColSON, a minimalist language that can be converted into JSON. There is a [ColSON parser Python package](https://github.com/shushtain/colson-pip), if you ever need it, Peter Parker.
 
 ## Syntax
 
